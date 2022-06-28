@@ -3,5 +3,36 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "operative-inputs": {
+      "projectType": "library",
+      "root": "projects/operative-inputs",
+      "sourceRoot": "projects/operative-inputs/src",
+      "prefix": "oprtv-input",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/operative-inputs/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/operative-inputs/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/operative-inputs/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/operative-inputs/src/test.ts",
+            "tsConfig": "projects/operative-inputs/tsconfig.spec.json",
+            "karmaConfig": "projects/operative-inputs/karma.conf.js"
+          }
+        }
+      }
+    }
   }
 }
